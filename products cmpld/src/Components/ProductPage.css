@@ -1,0 +1,62 @@
+/* CategoryHomePage.css */
+
+.container {
+    margin: 0 auto;
+    padding: 4rem;
+    height: 300px; /* Adjust the value as needed */
+    box-sizing: border-box; /* Include padding in the total height */
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: darkblue;
+    font-family: monospace;
+    cursor: pointer;
+    transition: text-decoration 0.3s ease-in-out;
+}
+
+.heading:hover {
+    text-decoration: underline;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.category-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease-in-out;
+}
+
+.category-link:hover {
+    transform: scale(1.05);
+}
+
+.category-container {
+    background-color: silver;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.category-container:hover {
+    background-color: #e0e0e0;
+}
+
+.category-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+    max-height: 300px; /* Adjust the value as needed */
+}
+
+.category-name {
+    font-weight: bold;
+    color: #333; /* Text color */
+}
