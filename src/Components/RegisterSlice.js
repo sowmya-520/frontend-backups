@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState= {
     success: false,
-    done: false
+    done: false,
+    error:'',
 }
 
 export const registerSlice= createSlice({
@@ -11,9 +12,11 @@ export const registerSlice= createSlice({
     reducers:{
         regSuccess(state){
             state.success= true
+            state.error=false
         },
         regFailed(state){
             state.success= false
+            state.error=true
         },
         setStatus(state){
             state.done= true

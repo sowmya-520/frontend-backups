@@ -19,7 +19,7 @@ const RegistrationPage=()=>
       address: '',
       password: ''
     });
-    const [showMessage, setShowMessage] = useState(""); 
+    const [showMessage, setShowMessage] = useState(false); 
     const handleChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -30,6 +30,7 @@ const RegistrationPage=()=>
       }
 
     const isAuthenticated = useSelector(state => state.register.success);
+    const error=useSelector(state=>state.register.error);
     useEffect(() => {
         if (isAuthenticated) {
           setShowMessage(true);
@@ -38,7 +39,7 @@ const RegistrationPage=()=>
             navigate('/login');
           }, 3000);
       
-          return () => clearTimeout(timeoutId); // Cleanup the timeout on unmount
+          return () => clearTimeout(timeoutId); 
         }
       }, [isAuthenticated, navigate]);
       
@@ -55,7 +56,15 @@ const RegistrationPage=()=>
                 : "Registration failed!"}
             </div>
           )}
+          {
+            error&&(
+                <div>
+                    <h1>error</h1>
+                </div>
+            )
+          }
 
+            
           <form onSubmit={HandleRegister}>
             <div className="form-group">
               <label>firstName</label>
