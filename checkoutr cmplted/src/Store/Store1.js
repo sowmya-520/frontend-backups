@@ -1,0 +1,20 @@
+import { configureStore } from '@reduxjs/toolkit';
+import authReducer from '../Components/authSlice';
+import { RegisterReducer } from '../Components/RegisterSlice';
+import { CategoryReducer } from '../Components/CategorySlice';
+import { ProductReducer } from '../Components/ProductSlice';
+import { cartReducer } from '../Components/CartSlice';
+import { CustomerIdReducer } from '../Components/CustomerIdSlice';
+
+
+export const store = configureStore({
+    reducer:{
+          auth:authReducer,
+          register:RegisterReducer,
+          category:CategoryReducer,
+          product:ProductReducer,
+          cart:cartReducer,
+          customerid:CustomerIdReducer,
+    },
+});
+export default store;
